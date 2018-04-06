@@ -8,7 +8,7 @@ block content
     period = getBlockchainInfo.bip9_softforks.segwit.statistics.period
     possible = getBlockchainInfo.bip9_softforks.segwit.statistics.possible ? "Yes" : "No"
     p1 = count/threshold*100
-    p2 = elapsed/threshold*100-p1
+    p2 = elapsed/period*100-p1
     p3 = 100 - p2 - p1
 
   script
