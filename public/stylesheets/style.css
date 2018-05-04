@@ -29,6 +29,10 @@ a {
     text-align: left;
 }
 
+.green {
+    color: #7fff6a;
+}
+
 #signal {
     background-color: #7fff6a;
 }

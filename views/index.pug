@@ -1,42 +1,10 @@
 extends layout
 
 block content
-  -
-    count = getBlockchainInfo.bip9_softforks.segwit.statistics.count
-    threshold = getBlockchainInfo.bip9_softforks.segwit.statistics.threshold
-    elapsed = getBlockchainInfo.bip9_softforks.segwit.statistics.elapsed
-    period = getBlockchainInfo.bip9_softforks.segwit.statistics.period
-    possible = getBlockchainInfo.bip9_softforks.segwit.statistics.possible ? "Yes" : "No"
-    p1 = count/period*100
-    p2 = elapsed/period*100-p1
-    p3 = 100 - p2 - p1
-
-  script
-    | let p1 = #{p1};
-    | let p2 = #{p2};
-    | let p3 = #{p3};
-    | $(function(){
-    |   jQuery('div#signal').width(p1 + '%');
-    |   jQuery('div#elapsed').width(p2 + '%');
-    |   jQuery('div#period').width(p3 + '%');
-    | });
-
   div.center.fullHeight
     img.flo(src="images/flo.svg")
     h1 Segwit Activation Status
 
     h3 Latest block height: #{getBlockchainInfo.blocks}
-    h3 Possible this period? #{possible}
-
-
-    div#bar.progress-bar
-      div#signal.progress(data-count=count)
-      div#elapsed.progress(data-count=elapsed)
-      div#period.progress(data-count=period)
-
-    div.last
-      span.signal Signaling: #{count}
-      span.elapsed Elapsed: #{elapsed}
-      span.period Period: #{period}
-
-    script console.log(!{JSON.stringify(getBlockchainInfo, null, 2)})
+    h3 Possible this period?&nbsp;
+      span.green LOCKED IN
