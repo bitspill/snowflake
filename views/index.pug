@@ -6,5 +6,7 @@ block content
     h1 Segwit Activation Status
 
     h3 Latest block height: #{getBlockchainInfo.blocks}
-    h3 Possible this period?&nbsp;
-      span.green LOCKED IN
+    h3
+      span Segwit is
+      span.green &nbsp;ACTIVE
+      span &nbsp;since block: #{getBlockchainInfo.bip9_softforks.segwit.since}

@@ -6,7 +6,12 @@ const client = new Client({port: 7313, username: 'user', password: 'pass'})
 
 let getBlockchainInfo = {
   // placeholders so it doesn't crash on startup before the first rpc call
-  'blocks': 2749831
+  'blocks': 2749831,
+  'bip9_softforks': {
+    'segwit': {
+      'since': 2757888
+    }
+  }
 }
 
 function updateInfo () {
